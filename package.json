@@ -1,0 +1,27 @@
+{
+  "name": "arcusglobal-assignment",
+  "version": "1.0.0",
+  "description": "arcus global coding assignment",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miraj12/ArcusGlobal-assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miraj12/ArcusGlobal-assignment/issues"
+  },
+  "homepage": "https://github.com/miraj12/ArcusGlobal-assignment#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "moment": "^2.18.1",
+    "request": "^2.81.0"
+  }
+}

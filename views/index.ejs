@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Weather</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <h2 align="center">Past weeks' weather</h2>
+      <fieldset>
+        <form action="/" method="post">
+          <input name="city" type="text" class="ghost-input" placeholder="Enter a City or Zipcode" required>
+          <select name="weekof" class="ghost-select" required>
+            <option value="" selected disabled>Week of</option>
+            <option value="2017-08-27">08/27/2017</option>
+            <option value="2017-08-20">08/20/2017</option>
+            <option value="2017-08-13">08/13/2017</option>
+            <option value="2017-08-06">08/06/2017</option>
+            <option value="2017-07-30">07/30/2017</option>
+          </select>
+          <input type="submit" class="ghost-button" value="Get Weather">
+        </form>
+      </fieldset>
+    </div>
+      </br>
+      <div>
+      <table>
+        <% if(weather !== null){ %>
+          <th colspan="7"><%= location%></th>
+          <% for (var i = 0; i < 5; i++) { %>
+            <tr>
+              <% for (var j = 0; j < weather.length; j++) { %>
+                  <%switch (i) {
+                    case 0 : %>
+                        <td><%= weather[j].date%></td>
+                        <% break;
+                    case 1 : %>
+                        <td><%= weather[j].day%></td>
+                        <% break;
+                    case 2 : %>
+                        <td><%= weather[j].desc%></td>
+                        <% break;
+                    case 3 : %>
+                        <td><img src="<%= weather[j].img%>" alt="" width="100" height="100"/></td>
+                        <% break;
+                    case 4 : %>
+                        <td><%= weather[j].maxtempF%>F / <%= weather[j].mintempF%>F</td>
+                        <% break;
+                    } %>
+              <% } %>
+            </tr>
+          <% } %>
+     <% } %>
+      </table>
+        <% if(error !== null){ %>
+          <%= error %>
+        <% } %>
+      </div>
+  </body>
+</html>
